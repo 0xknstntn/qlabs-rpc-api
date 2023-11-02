@@ -1,8 +1,3 @@
-import Cors from 'cors'
-const cors = Cors({
-        methods: ['POST', 'GET', 'HEAD'],
-})
-
 export default async function handler(req, res) {
         if (req.method === 'GET') {
                 var url = "";
