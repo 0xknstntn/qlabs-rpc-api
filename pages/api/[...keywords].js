@@ -1,10 +1,17 @@
+import Cors from 'cors'
+const cors = Cors({
+        methods: ['POST', 'GET', 'HEAD'],
+})
+
 export default async function handler(req, res) {
         if (req.method === 'GET') {
                 var url = "";
-                for (let index = 0; index < (req.query.keywords).length; index++) {
-                        url += "/" + req.query.keywords[index]
-                        
+                if ((req.query.keywords).length != 0) {
+                        for (let index = 0; index < (req.query.keywords).length; index++) {
+                                url += "/" + req.query.keywords[index]
+                        }
                 }
+                
                 var data = await fetch("http://89.108.83.252:26657" + url, {
                         mode: 'cors',
                 });
@@ -17,17 +24,20 @@ export default async function handler(req, res) {
         } 
 
         if (req.method === 'POST') {
-                var url = "";
-                for (let index = 0; index < (req.query.keywords).length; index++) {
-                        url += "/" + req.query.keywords[index]
-                        
-                }
-                var data = await fetch("http://89.108.83.252:26657" + url, {
+                /*var url = "";
+                if ((req.query.keywords).length != 0) {
+                        for (let index = 0; index < (req.query.keywords).length; index++) {
+                                url += "/" + req.query.keywords[index]
+                        }
+                }*/
+                const { body } = req
+                var data = await fetch("http://89.108.83.252:26657", {
                         method: 'POST',
                         headers: {
                                 'Content-Type': 'application/json',
                         },
                         mode: 'cors',
+                        body,
                 });
 
 
