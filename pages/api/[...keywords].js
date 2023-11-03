@@ -34,6 +34,7 @@ export async function handler(req, res) {
                 var dataJson = await data.json()
                 res.setHeader('Access-Control-Allow-Origin', '*');
                 res.setHeader('Content-Type', 'application/json');
+                res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
                 res.status(200).json(dataJson);
         }
         res.status(300);
