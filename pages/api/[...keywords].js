@@ -36,4 +36,5 @@ export async function handler(req, res) {
                 res.setHeader('Content-Type', 'application/json');
                 res.status(200).json(dataJson);
         }
+        res.status(300);
 }
