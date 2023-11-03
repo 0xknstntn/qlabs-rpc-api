@@ -7,6 +7,7 @@ export default async function handler(req, res) {
                                         'Content-Type': 'application/json',
                                 },
                                 body: JSON.stringify(req.body),
+                                mode: 'cors',
                         });
 
                         var dataJson = await data.json()
