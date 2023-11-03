@@ -37,3 +37,7 @@ export async function handler(req, res) {
                 res.status(200).json(dataJson);
         } 
 }
+
+export async function POST(req, res) {
+        res.status(200);
+}
