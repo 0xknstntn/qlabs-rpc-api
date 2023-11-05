@@ -4,11 +4,10 @@ export default async function handler(req, res) {
                         var data = await fetch("http://89.108.83.252:26657", {
                                 method: 'POST',
                                 headers: {
-                                        'Access-Control-Allow-Origin': '*',
                                         'Content-Type': 'application/json',
                                 },
                                 body: JSON.stringify(req.body),
-                                mode: 'no-cors',
+                                mode: 'cors',
                         });
 
                         var dataJson = await data.json()
