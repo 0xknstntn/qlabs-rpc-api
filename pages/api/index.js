@@ -15,7 +15,7 @@ export default async function handler(req, res) {
                         res.setHeader('Access-Control-Allow-Origin', '*');
                         res.setHeader('Content-Type', 'application/json');
                         res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
-                        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
+                        res.setHeader('Access-Control-Allow-Headers', 'Origin, Content-Type, X-Auth-Token')
                         res.status(200).json(dataJson);
                         break;
         }
